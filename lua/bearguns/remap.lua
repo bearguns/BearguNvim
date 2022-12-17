@@ -1,0 +1,10 @@
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>dd", vim.cmd.Ex)
+vim.keymap.set("i", "jk", "<Escape>")
+vim.keymap.set("n", "<leader>ws", vim.cmd.split)
+vim.keymap.set("n", "<leader>wv", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>wh", ":wincmd h<cr>")
+vim.keymap.set("n", "<leader>wj", ":wincmd j<cr>")
+vim.keymap.set("n", "<leader>wk", ":wincmd k<cr>")
+vim.keymap.set("n", "<leader>wl", ":wincmd l<cr>")
+vim.keymap.set("n", "<leader>wo", ":only<cr>")
