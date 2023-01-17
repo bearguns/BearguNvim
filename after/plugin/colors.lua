@@ -10,4 +10,4 @@ function ColorADinosaur(color)
     vim.cmd.colorscheme(color)
 end
 
-ColorADinosaur("kiwi")
+ColorADinosaur("rose-pine")

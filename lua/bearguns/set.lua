@@ -16,3 +16,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.colorcolumn = "100"
 vim.opt.updatetime = 50
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
