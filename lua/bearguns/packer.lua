@@ -35,5 +35,6 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     use("editorconfig/editorconfig-vim")
     use {"jesseleite/nvim-noirbuddy", requires = { "tjdevries/colorbuddy.nvim", branch = "dev" } }
+    use({"sbdchd/neoformat", as = "neoformat"})
 end)
 
