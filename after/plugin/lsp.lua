@@ -1,5 +1,4 @@
 require("mason").setup()
-require("luasnip.loaders.from_vscode").lazy_load()
 local mason_lspconfig = require("mason-lspconfig")
 mason_lspconfig.setup({
     ensure_installed = {
@@ -44,8 +43,8 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert(cmp_mappings),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" },
         { name = "buffer" },
+        { name = "luasnip" },
     })
 })
 
@@ -69,5 +68,35 @@ mason_lspconfig.setup_handlers({
             capabilities = lsp_capabilities
         })
     end,
+    ["volar"] = function()
+        lsp.volar.setup({
+            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+        })
+        require("luasnip.loaders.from_vscode").lazy_load({
+            include = { "vue", "typescript", "javascript" }
+        })
+    end,
+    ["eslint"] = function()
+        lsp.eslint.setup({
+            filetypes = {
+                "javascript",
+                "typescript",
+                "typescriptreact",
+                "vue",
+                "json"
+            },
+            settings = {
+                codeActionOnSave = {
+                    enable = true,
+                    mode = "all"
+                }
+            }
+        })
+    end,
+    ["emmet_ls"] = function()
+       lsp.emmet_ls.setup({
+            filetypes = { "vue", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" }
+        })
+    end
 })
 
