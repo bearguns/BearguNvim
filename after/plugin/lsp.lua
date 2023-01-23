@@ -70,7 +70,9 @@ mason_lspconfig.setup_handlers({
     end,
     ["volar"] = function()
         lsp.volar.setup({
-            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+            on_attach = lsp_attach,
+            capabilities = lsp_capabilities
         })
         require("luasnip.loaders.from_vscode").lazy_load({
             include = { "vue", "typescript", "javascript" }
@@ -78,6 +80,8 @@ mason_lspconfig.setup_handlers({
     end,
     ["eslint"] = function()
         lsp.eslint.setup({
+            on_attach = lsp_attach,
+            capabilities = lsp_capabilities,
             filetypes = {
                 "javascript",
                 "typescript",
@@ -95,6 +99,8 @@ mason_lspconfig.setup_handlers({
     end,
     ["emmet_ls"] = function()
        lsp.emmet_ls.setup({
+            on_attach = lsp_attach,
+            capabilities = lsp_capabilities,
             filetypes = { "vue", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" }
         })
     end
