@@ -1,1 +1,2 @@
-require("bearguns")
+require("bearguns.core")
+require("bearguns.lazy")
