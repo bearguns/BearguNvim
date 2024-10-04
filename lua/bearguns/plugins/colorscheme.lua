@@ -1,10 +1,17 @@
 return {
   {
-    "bluz71/vim-nightfly-guicolors",
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
     config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme nightfly]])
+      require("rose-pine").setup({
+        variant = "moon",
+        dim_inactive_windows = true,
+        styles = {
+          italic = false,
+        },
+      })
+      vim.cmd.colorscheme("rose-pine")
     end,
   },
 }

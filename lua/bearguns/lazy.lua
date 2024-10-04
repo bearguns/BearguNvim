@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "bearguns.plugins" }, { import = "bearguns.plugins.lsp" } }, {
-  install = {
-    colorscheme = { "nightfly" },
-  },
   checker = {
     enabled = true,
     notify = false,

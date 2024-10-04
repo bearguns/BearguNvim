@@ -16,10 +16,11 @@ return {
         vue = { "prettier" },
       },
       format_on_save = {
-        lsp_fallback = true,
+        -- lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
       },
+      log_level = vim.log.levels.DEBUG,
     })
 
     vim.keymap.set({ "n", "v" }, "<leader>T", function()

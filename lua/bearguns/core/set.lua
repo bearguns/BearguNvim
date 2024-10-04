@@ -21,6 +21,7 @@ opt.backspace = "indent,eol,start"
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.cursorline = true
 
 -- Let me copypasta freely
 opt.clipboard:append("unnamedplus")
